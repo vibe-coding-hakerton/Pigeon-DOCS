@@ -382,12 +382,24 @@ class Mail(models.Model):
     sender = models.CharField(max_length=200)
     snippet = models.TextField()  # 목록용 미리보기
     body_html = models.TextField()  # HTML 본문 (이미지 URL 포함)
-    body_text = models.TextField()  # Plain text 본문
 
     # 첨부파일 메타데이터만
     attachments = models.JSONField(default=list)
     # [{"id": "xxx", "name": "file.pdf", "size": 1024, "mimeType": "application/pdf"}]
+
+    @property
+    def body_text(self) -> str:
+        """HTML에서 plain text 추출 (동적 생성)"""
+        from bs4 import BeautifulSoup
+        if not self.body_html:
+            return ''
+        return BeautifulSoup(self.body_html, 'html.parser').get_text(separator='\n', strip=True)
 ```
+
+**Plain Text 처리**:
+- `body_text`는 별도 저장하지 않고 `body_html`에서 동적 추출
+- `BeautifulSoup.get_text()`로 가볍게 파싱 (추가 저장 공간 불필요)
+- LLM 분류 시 필요할 때만 추출하여 사용
 
 **이미지 처리**:
 ```html

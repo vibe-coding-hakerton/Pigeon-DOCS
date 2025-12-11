@@ -271,7 +271,7 @@ MVP에서는 후순위 (P2)
 사용자 액션: 없음 (자동)
 
 1. 사용자가 Pigeon 사용 중 (또는 다른 탭에서 작업 중)
-2. 주기적으로 새 메일 확인 (30초~1분 간격)
+2. 주기적으로 새 메일 확인 (3분 간격)
 3. 새 메일 감지 시:
    - 브라우저 알림: "Pigeon - 새 메일 3개가 도착했습니다"
    - 백그라운드에서 분류 진행 (조용히)
@@ -845,7 +845,7 @@ Response: Redirect to /dashboard (with session cookie)
                              │ HTTP/REST
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                      Backend (FastAPI)                          │
+│                      Backend (Django)                           │
 │  ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌────────────────┐  │
 │  │ Auth API  │ │ Mail API  │ │Folder API │ │ Classify API   │  │
 │  │(OAuth2)   │ │           │ │           │ │                │  │
@@ -854,7 +854,7 @@ Response: Redirect to /dashboard (with session cookie)
 │        ▼             ▼                             ▼            │
 │  ┌───────────┐ ┌───────────┐                ┌────────────────┐  │
 │  │  Gmail    │ │  Gmail    │                │  LLM Service   │  │
-│  │  OAuth2   │ │  API      │                │  (OpenAI API)  │  │
+│  │  OAuth2   │ │  API      │                │  (Gemini API)  │  │
 │  │  Client   │ │  Client   │                └────────────────┘  │
 │  └───────────┘ └───────────┘                                    │
 └────────────────────────────┬────────────────────────────────────┘
@@ -862,7 +862,7 @@ Response: Redirect to /dashboard (with session cookie)
               ┌──────────────┼──────────────┐
               ▼              ▼              ▼
        ┌───────────┐  ┌───────────┐  ┌───────────┐
-       │  SQLite   │  │  Google   │  │  OpenAI   │
+       │  SQLite   │  │  Google   │  │  Gemini   │
        │  Database │  │  Gmail    │  │  API      │
        └───────────┘  │  API      │  └───────────┘
                       └───────────┘
@@ -942,7 +942,7 @@ Response: Redirect to /dashboard (with session cookie)
 - [ ] Story: Gmail API 클라이언트 구현
 - [ ] Story: 초기 동기화 + 자동 분류 파이프라인 구현 (20개 배치)
 - [ ] Story: 증분 동기화 + 실시간 분류 구현 (새 메일 감지)
-- [ ] Story: 백그라운드 폴링 로직 구현 (30초~1분 간격)
+- [ ] Story: 백그라운드 폴링 로직 구현 (3분 간격)
 - [ ] Story: 메일 삭제 기능 구현 (휴지통 이동)
 - [ ] Story: 토큰 갱신 로직 구현
 

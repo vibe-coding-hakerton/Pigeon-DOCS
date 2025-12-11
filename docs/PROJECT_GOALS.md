@@ -88,7 +88,7 @@ AI 주도 개발의 **실습 대상**으로서의 프로젝트 정의.
 |------|------|------|
 | **Backend** | Django (Python) | API 서버, LLM 연동, ORM |
 | **Frontend** | Next.js + TypeScript | SSR 지원, 트리 구조 UI |
-| **Database** | PostgreSQL | JSONB, ArrayField, Django 통합 |
+| **Database** | SQLite3 | 경량 DB, Django 통합, MVP에 적합 |
 | **AI/LLM** | Gemini 2.5 Flash + LangChain | 메일 분류 로직, 모델 교체 용이 |
 | **상태관리** | Zustand | 간단하고 가벼움 |
 | **스타일링** | Tailwind CSS | 빠른 UI 개발 |

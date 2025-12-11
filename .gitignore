@@ -1,1 +1,24 @@
 .claude
+
+# 환경 변수 파일
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 로그
+*.log
+logs/
+
+# 데이터베이스
+*.db
+*.sqlite3

@@ -32,13 +32,13 @@
 | 3.1 | **작업 계획서** | `WORK_PLAN.md` | ✅ 완료 | 작업 순서, 의존성, 병렬 작업 가이드 (Squad용) |
 | 3.2 | DoD/AEC 정의 | `DOD_AEC.md` | ✅ 완료 | Story별 완료 기준, 인수 조건 |
 | 3.3 | **작업 워크플로우** | `WORKFLOW.md` | ✅ 완료 | 이슈 생성 → 브랜치 → 코드 → PR 전체 흐름 |
-| 3.4 | 테스트 시나리오 | `TEST_SCENARIOS.md` | ❌ 미작성 | E2E 테스트 케이스, Playwright 시나리오 |
+| 3.4 | 테스트 시나리오 | `TEST_SCENARIOS.md` | ✅ 완료 | E2E 테스트 케이스, Playwright 시나리오 |
 
 ### 4. 프로젝트 관리
 
 | # | 문서 | 파일명 | 상태 | 설명 |
 |---|------|--------|------|------|
-| 4.1 | GitHub Issues 목록 | `GITHUB_ISSUES.md` | ❌ 미작성 | Epic/Story/Task 전체 목록 (Issue 생성 전 초안) |
+| 4.1 | GitHub Issues 목록 | `GITHUB_ISSUES.md` | ✅ 완료 | Epic/Story/Task 전체 목록 (Issue 생성 전 초안) |
 | 4.2 | 기술 결정 기록 | `DECISIONS.md` | ✅ 완료 | 주요 기술 선택 사항 및 이유 |
 
 ---
@@ -201,8 +201,9 @@ Phase 3: 프로젝트 관리
 - [x] UI/UX 설계 (UI_SPEC.md)
 - [x] **작업 계획서가 명확하게 정의됨 (WORK_PLAN.md)** ← 핵심
 - [x] **DoD/AEC가 명확하게 정의됨 (DOD_AEC.md)** ← 완료 판단용
-- [ ] 테스트 시나리오 정의 (TEST_SCENARIOS.md)
+- [x] 테스트 시나리오 정의 (TEST_SCENARIOS.md)
 - [ ] Claude Code가 참조할 CLAUDE.md 업데이트
+- [x] GitHub Issues 목록 작성 (GITHUB_ISSUES.md)
 
 ---
 
@@ -212,9 +213,9 @@ Phase 3: 프로젝트 관리
 |----------|------|--------|--------|
 | 기획 문서 | 3 | 0 | 100% |
 | 설계 문서 | 4 | 0 | 100% |
-| 개발 가이드 | 3 | 1 | 75% |
-| 프로젝트 관리 | 1 | 1 | 50% |
-| **전체** | **11** | **2** | **85%** |
+| 개발 가이드 | 4 | 0 | 100% |
+| 프로젝트 관리 | 2 | 0 | 100% |
+| **전체** | **13** | **0** | **100%** |
 
 ---
 

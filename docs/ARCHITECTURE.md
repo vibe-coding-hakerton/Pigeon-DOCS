@@ -697,9 +697,10 @@ flowchart TD
 
 ### 7.2 인증 방식
 
-- **Session 기반 인증** (Django Session)
-- Access Token은 서버에서 관리
-- Refresh Token으로 자동 갱신
+- **JWT 기반 인증**
+- Access Token: 클라이언트 메모리 저장, 1시간 유효
+- Refresh Token: HttpOnly 쿠키 저장, 7일 유효
+- Gmail OAuth Token: 서버 DB에 Fernet 암호화 저장
 
 ---
 
@@ -715,22 +716,26 @@ flowchart TB
             CORS["CORS Policy<br/>- Allowed: frontend domain<br/>- Credentials: true"]
         end
 
-        subgraph Token["OAuth2 Token Management"]
-            AccessToken["Access Token<br/>서버 세션 저장 (암호화)"]
-            RefreshToken["Refresh Token<br/>서버 DB 저장 (암호화)"]
+        subgraph JWT["JWT Token Management"]
+            AccessToken["JWT Access Token<br/>클라이언트 메모리 (1시간)"]
+            RefreshToken["JWT Refresh Token<br/>HttpOnly 쿠키 (7일)"]
+        end
+
+        subgraph OAuth["Gmail OAuth Token"]
+            GmailToken["Gmail Access/Refresh Token<br/>서버 DB (Fernet 암호화)"]
             NoExpose["❌ 클라이언트 노출 금지"]
         end
 
         subgraph Django["Django Security"]
-            CSRF["CSRF Protection"]
-            Session["Session Security<br/>(HttpOnly, Secure)"]
+            CORS["CORS Policy"]
             XSS["XSS Prevention"]
         end
     end
 
-    HTTPS --> Token
-    CORS --> Token
-    Token --> Django
+    HTTPS --> JWT
+    CORS --> JWT
+    JWT --> OAuth
+    OAuth --> Django
 ```
 
 ### 8.2 Rate Limiting
