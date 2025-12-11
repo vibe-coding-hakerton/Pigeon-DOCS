@@ -816,8 +816,10 @@ NEXT_PUBLIC_API_URL=https://api.pigeon.app
 - [제품 기획서](./PRODUCT_SPEC.md)
 - [기술 결정 기록](./DECISIONS.md)
 - [컨벤션 가이드](./CONVENTIONS.md)
-- [API 명세서](./API_SPEC.md) (작성 예정)
-- [데이터베이스 설계](./DATABASE.md) (작성 예정)
+- [API 명세서](./API_SPEC.md)
+- [데이터베이스 설계](./DATABASE.md)
+- [UI 설계](./UI_SPEC.md)
+- [작업 계획서](./WORK_PLAN.md)
 
 ---
 

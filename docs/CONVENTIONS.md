@@ -158,6 +158,23 @@ feat(api): 메일 분류 API 추가.
 feat(api): 메일 분류 API 추가
 ```
 
+#### Claude Code 워터마크 (이 프로젝트 한정)
+
+이 프로젝트는 AI 주도 개발 파이프라인 실험 프로젝트이므로, **커밋/PR/Issue에 Claude Code 워터마크를 포함합니다.**
+
+```
+feat(folder): 폴더 CRUD API 구현
+
+- FolderSerializer 구현
+- FolderViewSet CRUD 구현
+
+Closes #42
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+```
+
+> **Note**: 이 설정은 Pigeon 프로젝트에만 해당됩니다. 전역 설정(`~/.claude/CLAUDE.md`)에서는 워터마크를 기본적으로 사용하지 않습니다.
+
 ---
 
 ## 2. 파일/디렉토리 네이밍
